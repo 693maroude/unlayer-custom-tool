@@ -1,7 +1,3 @@
-unlayer.loadBlank({
-  backgroundColor: "#fff"
-});
-
 unlayer.registerTool({
   name: "custom-signature-tool",
   usageLimit: 1,
