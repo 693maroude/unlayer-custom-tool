@@ -38,7 +38,7 @@ unlayer.registerTool({
         ext_app_url: {
           label: "External app url",
           widget: "text",
-          defaultValue: `http://clevero-e-signature-prod.s3-website-ap-southeast-2.amazonaws.com/`
+          defaultValue: `http://clevero-e-signature-prod.s3-website-ap-southeast-2.amazonaws.com`
         },
         url_text: {
           label: "Url text",
@@ -150,7 +150,7 @@ unlayer.registerTool({
       web: function (values) {
         const signatureDiv = `
         <div id="signature-link">
-          <a href="${values.ext_app_url}/email?id=${values.template_id}&uuid=${
+          <a href="${values.ext_app_url}/pdf?id=${values.template_id}&uuid=${
           values.uuid
         }" target="_blank">
             ${values.url_text}
@@ -162,7 +162,7 @@ unlayer.registerTool({
           ${values.display_name && "data--name"} 
           ${values.display_date && "data--date"} 
           ${values.display_company_name && "data--company--name"}
-          "data--signature"
+          data--signature
         >
         </div>`;
 
@@ -171,7 +171,7 @@ unlayer.registerTool({
       email: function (values) {
         const signatureDiv = `
         <div id="signature-link">
-          <a href="${values.ext_app_url}/email?id=${values.template_id}&uuid=${
+          <a href="${values.ext_app_url}/pdf?id=${values.template_id}&uuid=${
           values.uuid
         }" target="_blank">
             ${values.url_text}
@@ -183,7 +183,7 @@ unlayer.registerTool({
           ${values.display_name && "data--name"} 
           ${values.display_date && "data--date"} 
           ${values.display_company_name && "data--company--name"}
-          "data--signature"
+          data--signature
         >
         </div>`;
 
