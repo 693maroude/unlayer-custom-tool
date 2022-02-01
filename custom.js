@@ -73,14 +73,13 @@ unlayer.registerTool({
             background-color: #fafbfa;
             border: 1px solid #f1f1f1;
             border-radius: 0.5em;
-            fontSize: 0.875rem;
-            display: flex;
-            flex-wrap:wrap;
+            font-size: 0.875rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
             padding: 10px;
         `;
         const divStyle = `
             position: relative;
-            flex: 1 1 20rem;
             padding: 0.75rem 1.25rem;
             boxSizing: border-box;
         `;
@@ -136,6 +135,13 @@ unlayer.registerTool({
                           <input style="${inputStyle}" readonly>
                       </div>`
             : ``) +
+          `<div style="${divStyle}">
+                          <label style="${labelStyle}">
+                              Signature
+                            </label>
+
+                          <input style="${inputStyle}" readonly>
+                      </div>` +
           `</form>`;
         return fields;
       }
@@ -156,6 +162,7 @@ unlayer.registerTool({
           ${values.display_name && "data--name"} 
           ${values.display_date && "data--date"} 
           ${values.display_company_name && "data--company--name"}
+          "data--signature"
         >
         </div>`;
 
@@ -176,6 +183,7 @@ unlayer.registerTool({
           ${values.display_name && "data--name"} 
           ${values.display_date && "data--date"} 
           ${values.display_company_name && "data--company--name"}
+          "data--signature"
         >
         </div>`;
 
