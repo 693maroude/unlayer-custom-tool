@@ -45,6 +45,11 @@ unlayer.registerTool({
           widget: "text",
           defaultValue: "Click to Sign Agreement"
         },
+        instance_id: {
+          label: "Instance Identifier",
+          widget: "text",
+          defaultValue: "",
+        },  
         template_id: {
           label: "Template ID",
           widget: "text",
@@ -59,7 +64,7 @@ unlayer.registerTool({
           }`
         },
         uuid: {
-          label: "Entry UUID",
+          label: "Uniquely identifying field",
           widget: "text",
           defaultValue: `{{[uuid]}}`
         }
@@ -150,7 +155,7 @@ unlayer.registerTool({
       web: function (values) {
         const signatureDiv = `
         <div id="signature-link">
-          <a href="${values.ext_app_url}/pdf?id=${values.template_id}&uuid=${
+          <a href="${values.ext_app_url}/pdf?id=${values.template_id}&instance=${values.instance_id}&uuid=${
           values.uuid
         }" target="_blank">
             ${values.url_text}
@@ -171,7 +176,7 @@ unlayer.registerTool({
       email: function (values) {
         const signatureDiv = `
         <div id="signature-link">
-          <a href="${values.ext_app_url}/pdf?id=${values.template_id}&uuid=${
+          <a href="${values.ext_app_url}/pdf?id=${values.template_id}&instance=${values.instance_id}&uuid=${
           values.uuid
         }" target="_blank">
             ${values.url_text}
