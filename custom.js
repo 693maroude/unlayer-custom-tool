@@ -38,7 +38,7 @@ unlayer.registerTool({
         ext_app_url: {
           label: "External app url",
           widget: "text",
-          defaultValue: `http://clevero-e-signature-prod.s3-website-ap-southeast-2.amazonaws.com`
+          defaultValue: `https://esignature.clevero.co/`
         },
         url_text: {
           label: "Url text",
